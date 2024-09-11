@@ -25,7 +25,7 @@ impl Application {
         }
     }
 
-    fn handle_term_events(&self) {
+    fn handle_term_events(&mut self) {
         let event_stream = crossterm::event::poll(std::time::Duration::from_millis(0));
 
         if event_stream.unwrap() {
@@ -43,6 +43,24 @@ impl Application {
                         terminal::disable_raw_mode().unwrap();
 
                         std::process::exit(0);
+                    }
+
+                    // home view
+                    if event.code == KeyCode::Char('1') {
+                        let home_view = crate::views::home_view::HomeView::new();
+                        self.current_view = Some(home_view);
+                    }
+
+                    // about me
+                    if event.code == KeyCode::Char('2') {
+                        let about_me_view = crate::views::about_me_view::AboutMeView::new();
+                        self.current_view = Some(about_me_view);
+                    }
+
+                    // projects 
+                    if event.code == KeyCode::Char('3') {
+                        let projects_view = crate::views::projects_view::ProjectsView::new();
+                        self.current_view = Some(projects_view);
                     }
                 }
                 _ => {}

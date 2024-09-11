@@ -25,7 +25,7 @@ impl View for SplashView {
 
         let window_size = crossterm::terminal::size()?;
 
-        let splash_text = r#"Terminal CV"#;
+        let splash_text = r#"Brandon Lee Gill - Terminal CV"#;
 
         let splash_text_len = splash_text.len();
 
