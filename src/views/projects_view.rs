@@ -67,7 +67,7 @@ impl View for ProjectsView {
             cursor::MoveTo(4, 6),
             style::Print("The Binding of Isaac Achievement Tracker"),
             cursor::MoveTo(4, 7),
-            style::Print(" -> github.com/pgxtips/tboiSecrets"),
+            style::Print(" -> github.com/pgxtips/tboiSecrets (try my profile: pgxtips)"),
             cursor::MoveTo(4, 8),
             style::Print(" -> https://www.tboisecrets.com"),
             cursor::MoveTo(4, 9),
